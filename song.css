@@ -9,14 +9,28 @@
         transform: rotate(360deg);
     }
 }
-
 .page{
-    display: flex;
+    display: flex; 
     flex-direction: column; 
     height: 100vh;
+
+}
+.pagewarp,.pagewarp::after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+}
+.page .pagewarp{
     background: transparent url("./images/17702137207605115.jpg") no-repeat center;
     background-size: cover;
       
+}
+.page .pagewarp::after{
+    content: " ";
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .disc-container{
@@ -39,19 +53,72 @@
 .disc-container .light{
     width: 72vw;
     position: absolute;
-    animation: circle 20s infinite linear;
 }
 .disc-container .cover{
     width: 44.5vw;
     position: absolute;
     border-radius: 50%;
+}
+.disc-container .play{
+    position: absolute;
+    width: 22.4vw;
+    display: none;
+}
+
+.disc-container.playing .light,
+.disc-container.playing .cover{
     animation: circle 20s infinite linear;
 }
+.disc-container.paused .light,
+.disc-container.paused .cover,
+.disc-container.paused .play{
+    display: block;
+    animation-play-state: paused;
+}
 
- .song-description{
+
+.song-description{
+    flex-grow: 1;
+    color: hsla(0,0%,100%,.6);
+    text-align: center;
+    line-height: 1.5;
+}
+.song-description h1{
+    color: white;
+    font-size: 18px;
+}
+.song-description p{
+    font-size: 16px;
+    line-height: 30px;
+}
+.song-description .lyric{
+    height: 90px;
+    overflow: hidden;
+}
+.song-description p.active{
 
 }
 
-.pages > .links{
 
+.page > .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #d43b32;
+}
+.page > .links > a{
+    width: 38.5vw;
+    margin: 1em;
+    padding: 1.5vw;
+    text-align: center;
+    border: 1px solid #d43b32;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 5px;
+    letter-spacing: 4px;
 } 
+.page > .links > a.download{
+    color: white;
+    background-color: #d43b32;
+}
