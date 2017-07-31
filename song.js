@@ -1,7 +1,7 @@
 $(function () {
     
     //歌词
-    $.get('/lyric.json').then(function (lrc) {
+    $.get('./lyric.json').then(function (lrc) {
         let { lyric } = lrc
         let arr = lyric.split('\n')
         let regex = /^\[(.+)\](.*)$/
@@ -12,10 +12,10 @@ $(function () {
             }
         })
         let $lyric = $('.lyric')
-        arr.map(function (lrc) {
-            if (!lrc) {return}
+        arr.map(function (item) {
+            if (!item) {return}
             let $p = $('<p>')
-            $p.attr('data-time',lrc.item).text(lrc.words)
+            $p.attr('data-time',item.time).text(item.words)
             $p.appendTo($lyric)
         })
     })
