@@ -96,6 +96,9 @@ section > h2:first-child{
 .newmusic{
 
 }
+.newmusic > div{
+    text-align: center;
+}
 .newmusic > ol{
     padding-left: 2.5vw;
 }
