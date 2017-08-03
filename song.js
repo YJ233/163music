@@ -22,7 +22,7 @@ $(function () {
 
     //播放
     let audio = document.createElement('audio')
-    audio.src = 'http://dl.stream.qqmusic.qq.com/C400000MCRpx0myGAL.m4a?vkey=81F7019D76BA745611C8081210655199AC6460A71531483BDA8168A27E1D1063681273995CEC3405DAFC37C29F951BA0218AD13D2631095C&guid=755372966&uin=469532368&fromtag=66'
+    audio.src = '//otzmymn2r.bkt.clouddn.com/%E6%88%90%E9%83%BD.m4a'
     audio.oncanplay = function () {
         audio.play()
         $('.disc-container').addClass('playing')

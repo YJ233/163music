@@ -104,6 +104,10 @@ section > h2:first-child{
     padding: 1vw 0;
     position: relative;
 }
+.newmusic > ol > li a{
+    text-decoration: none;
+    color: inherit;
+}
 .newmusic > ol > li h3{
     font-size: 17px;
     padding-bottom: 3px;
