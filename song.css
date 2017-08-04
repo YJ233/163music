@@ -48,14 +48,14 @@
     margin-top: 15vw;
 } 
 .disc-container .ring{
-    width: 72vw;
+    width: 80vw;
 }
 .disc-container .light{
-    width: 72vw;
+    width: 80vw;
     position: absolute;
 }
 .disc-container .cover{
-    width: 44.5vw;
+    width: 50vw;
     position: absolute;
     border-radius: 50%;
 }
@@ -82,6 +82,7 @@
     color: hsla(0,0%,100%,.6);
     text-align: center;
     line-height: 1.5;
+    margin-top: 6.5vw;
 }
 .song-description h1{
     color: white;
