@@ -87,6 +87,10 @@
     color: white;
     font-size: 18px;
 }
+.song-description h1 .singer{
+    font-size: 16px;
+    color: hsla(0,0%,100%,.6);
+}
 .song-description p{
     font-size: 16px;
     line-height: 30px;

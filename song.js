@@ -2,10 +2,6 @@
 
 $(function () {
 
-    //生成audio标签
-    let audio = document.createElement('audio')
-
-
     //获取歌曲id
     let id = location.search.match(/\bid=([^&]*)/)[1]
 
@@ -18,14 +14,23 @@ $(function () {
                 song = arr[index]
             }
         })
-        audio.src = song.url
-
+        let {url,name,singer,lyric} = song
+        initPlayer(url)
+        initSonginfo(name,singer,lyric)
     })
 
 
-    //歌词
-    $.get('./lyric.json').then(function (lrc) {
-        let { lyric } = lrc
+    function initSonginfo(name,singer,lyric) {
+        //歌名+演唱者
+        $('.song-description > h1').html(`
+            <h1>
+                <span class="name">${name}</span>
+                <span>-</span>
+                <span class="singer">${singer}</span>
+            </h1>
+        `)
+
+        //歌词
         let arr = lyric.split('\n')
         let regex = /^\[(.+)\](.*)$/
         arr = arr.map(function (string, index) {
@@ -41,26 +46,34 @@ $(function () {
             $p.attr('data-time', item.time).text(item.words)
             $p.appendTo($lyric)
         })
-    })
-
-    //audio播放逻辑
-    audio.oncanplay = function () {
-        audio.play()
-        $('.disc-container').addClass('playing')
-    }
-    audio.onended = function () {
-        $('.disc-container').addClass('paused')
     }
 
-    //歌曲暂停播放
-    $('.cover').on('click', function () {
-        audio.pause()
-        $('.disc-container').addClass('paused')
-    })
-    $('.play').on('click', function () {
-        audio.play()
-        $('.disc-container').removeClass('paused')
-    })
+    function initPlayer(url) {
+
+        let audio = document.createElement('audio')
+
+        audio.src = url
+
+        //audio播放逻辑
+        audio.oncanplay = function () {
+            audio.play()
+            $('.disc-container').addClass('playing')
+        }
+        audio.onended = function () {
+            $('.disc-container').addClass('paused')
+        }
+
+        //歌曲暂停播放
+        $('.cover').on('click', function () {
+            audio.pause()
+            $('.disc-container').addClass('paused')
+        })
+        $('.play').on('click', function () {
+            audio.play()
+            $('.disc-container').removeClass('paused')
+        })
+    }
+
 
 
 })
