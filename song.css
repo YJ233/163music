@@ -2,21 +2,29 @@
 *::before, *::after{box-sizing: border-box;}
 
 @keyframes circle{
-    0%{
-        transform: rotate(0deg);
+    0%{ 
+        transform: translate(-50%,-50%) rotate(0deg);
     }
     100%{
-        transform: rotate(360deg);
+        transform: translate(-50%,-50%) rotate(360deg);
     }
 }
-
+@-webkit-keyframes circleIOS{
+    0%{ 
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
 .page{
     display: flex; 
     flex-direction: column; 
     height: 100vh;
 }
-.pagewarp,.pagewarp::after{
+.pagewarp, .pagewarp::after{
     position: absolute;
+    height: 100vh;
     left: 0;
     right: 0;
     bottom: 0;
@@ -41,12 +49,14 @@
     width: 24vw;
     position: absolute;
     left: 50%;
+    z-index: 1;
 }
  .disc-container .disc{
     display: flex;
     justify-content: center;
     align-items: center; 
     margin-top: 15vw;
+    position: relative; 
 } 
 .disc-container .ring{
     width: 80vw;
@@ -54,26 +64,37 @@
 .disc-container .light{
     width: 80vw;
     position: absolute;
+    left: 50%;top:50%; 
+    transform: translate(-50%,-50%);
 }
 .disc-container .cover{
     width: 50vw;
     position: absolute;
     border-radius: 50%;
+    left: 50%;top:50%;  
+    transform: translate(-50%,-50%);  
 }
 .disc-container .play{
-    position: absolute;
+    position: absolute; 
     width: 22.4vw;
-    display: none;
+    left: 50%;top:50%;
+    transform: translate(-50%,-50%);
 }
 .disc-container.playing .light,
 .disc-container.playing .cover{
-    animation: circle 20s infinite linear;
+    animation: circle 20s infinite linear;  
+    -webkit-animation: circleIOS 20s infinite linear;
+}
+.disc-container.playing .play{
+    display: none;
 }
 .disc-container.paused .light,
-.disc-container.paused .cover,
+.disc-container.paused .cover{
+    animation-play-state: paused;  
+    -webkit-animation-play-state: paused;
+}
 .disc-container.paused .play{
     display: block;
-    animation-play-state: paused;
 }
 
 
