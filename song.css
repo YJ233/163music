@@ -9,11 +9,11 @@
         transform: rotate(360deg);
     }
 }
+
 .page{
     display: flex; 
     flex-direction: column; 
     height: 100vh;
-
 }
 .pagewarp,.pagewarp::after{
     position: absolute;
@@ -32,6 +32,7 @@
     content: " ";
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 
 .disc-container{
     position: relative;
@@ -64,7 +65,6 @@
     width: 22.4vw;
     display: none;
 }
-
 .disc-container.playing .light,
 .disc-container.playing .cover{
     animation: circle 20s infinite linear;
