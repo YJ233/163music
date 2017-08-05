@@ -55,7 +55,7 @@ $(function () {
     function initPlayer(url) {
 
         let audio = document.createElement('audio')
-        $(audio).appendTo('body').attr('controls', 'true') //测试用
+        // $(audio).appendTo('body').attr('controls', 'true') //测试用
 
         audio.src = url
 
