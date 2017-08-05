@@ -55,7 +55,7 @@ $(function () {
     function initPlayer(url) {
 
         let audio = document.createElement('audio')
-        $(audio).appendTo('body')
+        $(audio).appendTo('body').attr('controls', 'true') //测试用
 
         audio.src = url
 
@@ -66,6 +66,9 @@ $(function () {
         }
         audio.onended = function () {
             $('.disc-container').addClass('paused')
+            window.clearInterval(clock)
+            $('.lines').css('transform', `translateY(0px)`).children().removeClass('active')
+
         }
 
         //歌曲暂停播放
@@ -79,7 +82,7 @@ $(function () {
         })
 
         //滚动歌词
-        setInterval(() => { rollLyric(audio) }, 1000)
+        let clock = setInterval(() => { rollLyric(audio) }, 1000)
     }
 
     function rollLyric(audio) {
@@ -91,44 +94,29 @@ $(function () {
         let line
         loop:
         for (var i = 0; i < $lines.length; i++) {
-            console.log('for'+'      ' +i)
-            // if ($lines.eq(i + 1).length !== 0 && $lines.eq(i).attr('data-time') < time && time < $lines.eq(i + 1).attr('data-time')) {
-            //     console.log('2')
-            //     line = $lines[i]
-            //     console.log(line)
-            //     $('.lines').css('transform', `translateY(-${(i - 1) * 30}px)`)
-            //     break
-            // }
-            //  if ($lines.eq(i + 1).length === 0) {
-            //     line = $lines[i]
-            //     console.log('我是最后')
-            //     console.log(line)
-
-            //     $('.lines').css('transform', `translateY(-${(i - 1) * 30}px)`)
-            //     break
-            // }
-
-            // console.log($lines.eq(i + 1).length) 
-            // break;
-
             switch (true) {
-                case time <$lines.eq(i).attr('data-time'):
-                    console.log('case1')
+                //当前time<第一行歌词时间
+                case time < $lines.eq(i).attr('data-time'):
+                    // console.log('case1')
                     break loop;
+                //当前行歌词时间<time<下一行歌词时间
                 case $lines.eq(i + 1).length !== 0 && $lines.eq(i).attr('data-time') < time && time < $lines.eq(i + 1).attr('data-time'):
-                    console.log('case2' + '        ' + i)
+                    // console.log('case2' + '        ' + i)
                     line = $lines[i]
-                    console.log(line)
+                    // console.log(line)
                     $('.lines').css('transform', `translateY(-${(i - 1) * 30}px)`)
+                    $(line).addClass('active').siblings().removeClass('active')
                     break loop;
-                case i !== 0 && $lines.eq(i+1).length === 0:
+                //最后一行歌词
+                case $lines.eq(i + 1).length === 0:
                     line = $lines[i]
-                    console.log('我是最后')
-                    console.log(i !== 0)
-                    console.log($lines.eq(i + 1).length)
-                    console.log(line)
-                    console.log(i)
+                    // console.log('我是最后')
+                    // console.log(i !== 0)
+                    // console.log($lines.eq(i + 1).length)
+                    // console.log(line)
+                    // console.log(i)
                     $('.lines').css('transform', `translateY(-${(i - 1) * 30}px)`)
+                    $(line).addClass('active').siblings().removeClass('active')
                     break loop;
             }
         }

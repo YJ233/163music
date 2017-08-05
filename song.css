@@ -92,6 +92,9 @@
     font-size: 16px;
     color: hsla(0,0%,100%,.6);
 }
+.song-description .lines{
+    transition: transform 0.3s;
+}
 .song-description p{
     font-size: 16px;
     line-height: 30px;
@@ -101,7 +104,7 @@
     overflow: hidden;
 }
 .song-description p.active{
-
+    color: white;
 }
 
 
