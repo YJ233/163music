@@ -16,17 +16,23 @@ section > h2:first-child{
     line-height: 1;
 }
 
+
 .topbar{
+    height: 17vw;
+}
+.topbar .fixed-topbar{
     background: #d43c33;
     padding: 4.55vw 2.5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
 }
-.topbar > .topsvg{
+.topbar .topsvg{
     width: 38vw;
 }
-.topbar > a{
+.topbar a{
     color: white;
     line-height: 7.5vw;
     border: 1px solid white;
@@ -37,25 +43,30 @@ section > h2:first-child{
 
 
 .sitenav{
-
+    height: 10.6vw;
 }
-.sitenav > ol{
+.sitenav .fixed-sitenav{
+    position: fixed;
+    width: 100%;
+    background: white;
+}
+.sitenav ol{
     display: flex;
     text-align: center; 
     line-height: 10.6vw;
     border-bottom: 1px solid #ccc;
 }
-.sitenav > ol > li{
+.sitenav ol > li{
     flex: 1;
 }
-.sitenav > ol > li > span{
+.sitenav ol > li > span{
     display: inline-block;
     position: relative; 
 }
-.sitenav > ol > li.active{
+.sitenav ol > li.active{
     color: #d33a31;
 }
- .sitenav > ol > li.active > span::after{
+ .sitenav ol > li.active > span::after{
     content: "";
     position: absolute;
     left: -1.5vw; right: -1.5vw;
