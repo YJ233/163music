@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "url": "http://otzmymn2r.bkt.clouddn.com/%E6%88%90%E9%83%BD.m4a",
+        "name": "成都",
+        "singer": "赵雷",
+        "album": "成都"
+    },
+    {
+        "id": "2",
+        "url": "http://otzmymn2r.bkt.clouddn.com/%E5%B0%8F%E5%8D%8A.mp3",
+        "name": "小半",
+        "singer": "陈粒",
+        "album": "小梦大半"
+    },
+    {
+        "id": "3",
+        "url": "http://otzmymn2r.bkt.clouddn.com/%E5%AE%89%E5%92%8C%E6%A1%A5.mp3",
+        "name": "安和桥",
+        "singer": "宋冬野",
+        "album": "安河桥北"
+    },
+    {
+        "id": "4",
+        "url": "http://otzmymn2r.bkt.clouddn.com/%E5%A4%A9%E7%A9%BA%E4%B9%8B%E5%9F%8E.mp3",
+        "name": "天空之城",
+        "singer": "李志",
+        "album": "我爱南京"
+    },
+    {
+        "id": "5",
+        "url": "http://otzmymn2r.bkt.clouddn.com/%E4%B8%83%E6%9C%88%E4%B8%8A.mp3",
+        "name": "七月上",
+        "singer": "Jam",
+        "album": "七月上"
+    }
+]

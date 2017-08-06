@@ -60,7 +60,7 @@
     </header>
     <nav class="sitenav">
         <div class="fixed-sitenav">
-            <ol>
+            <ol class="tab-items">
                 <li class="active"><span>推荐音乐</span></li>
                 <li><span>热歌榜</span></li>
                 <li><span>搜索</span></li>
@@ -68,7 +68,7 @@
         </div>
     </nav>
     <ol class="tab-content">
-        <li>
+        <li class="active">
             <section class="playlists">
                 <h2>推荐歌单</h2>
                 <ul>
@@ -150,8 +150,19 @@
                 </div>
             </section>
         </li>
-        <li></li>
-        <li></li>
+        <li class="hotmusic">
+            <img src="./images/hotmusic.png" alt="">
+            <div class="tab2-loading">
+                <img src="./images/loading.gif" alt="">
+            </div>
+        </li>
+        <li>
+            <div class="tab3-loading">
+                <img src="./images/loading.gif" alt="">
+            </div>
+            <input id="search" type="text" style="border: 1px solid red">
+            <div id="output"></div>
+        </li>
     </ol>
 
     <script src="//at.alicdn.com/t/font_mspoi7wwyvavpldi.js"></script>
