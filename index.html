@@ -157,15 +157,26 @@
             </div>
         </li>
         <li>
-            <div class="tab3-loading">
-                <img src="./images/loading.gif" alt="">
-            </div>
-            <input id="search" type="text" style="border: 1px solid red">
-            <div id="output"></div>
+              <section class="search">
+                <div class="inputwarp">
+                    <svg class="iconsearch" aria-hidden="true">
+                        <use xlink:href="#icon-search"></use>
+                    </svg>
+                    <input id="search" type="text" placeholder="搜索歌曲名称">
+                    <div class="icondelete-box">
+                        <svg class="icondelete" aria-hidden="true">
+                            <use xlink:href="#icon-delete"></use>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            <div class="searchresult">
+                <ol></ol>
+            </div>  
         </li>
     </ol>
 
-    <script src="//at.alicdn.com/t/font_mspoi7wwyvavpldi.js"></script>
+    <script src="//at.alicdn.com/t/font_who4vfs55o5stt9.js"></script>
     <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="./index.js"></script>
 </body>
