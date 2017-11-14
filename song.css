@@ -32,8 +32,8 @@
     z-index: -1;
 }
 .page .pagewarp{
-    background: transparent url("./images/17702137207605115.jpg") no-repeat center;
-    background-size: cover;
+    background: transparent no-repeat center;
+    background-size: auto 150%;
       
 }
 .page .pagewarp::after{
