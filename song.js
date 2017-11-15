@@ -31,11 +31,8 @@ $(function () {
         `)
 
         //图片
-        console.log(url_img)
-        console.log('~-~')
-        console.log(url_bg)
-        $('.cover').attr({ "src": url_img })
-        $('.page .pagewarp').css({ "background-image": "url("+url_bg+")" })
+        $('.cover').attr(`src`, `${url_img}`)
+        $('.page .pagewarp').css(`background-image`, `url(${url_bg})`)
 
         //歌词
         initLyric(lyric)
