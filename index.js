@@ -79,8 +79,8 @@ $(function () {
 
     function tab3(li) {
         $.get('./indextab3.json').then(function (res) {
-            console.log('1')
-            console.log(res)
+            // console.log('1')
+            // console.log(res)
             li.html(res.content)
             li.attr('data-downloaded', 'yes')
         })
@@ -88,7 +88,7 @@ $(function () {
 
 
     function search(keyword) {
-        console.log('搜索' + keyword)
+        // console.log('搜索' + keyword)
         return new Promise((resolve, reject) => {
             let db = [
                 {
@@ -118,7 +118,7 @@ $(function () {
             })
 
             setTimeout(function () {
-                console.log(keyword + "的结果")
+                // console.log(keyword + "的结果")
                 resolve(result)
             }, Math.random() * 1000 + 500)
         })
@@ -141,8 +141,8 @@ $(function () {
     $('#search').on('input', function (e) {
         let $input = $(e.currentTarget)
         let value = $input.val()
-        console.log('lalalal'+'                    '+value)
-        console.log(value==='')
+        // console.log('lalalal'+'                    '+value)
+        // console.log(value==='')
         if(value !=='') { 
             $('.icondelete-box').addClass('active')
         }else {$('.icondelete-box').removeClass('active')}
@@ -152,13 +152,13 @@ $(function () {
 
         timer = setTimeout(function () {
             search(value).then((result) => {
-                console.log(result)
+                // console.log(result)
                 timer = 0
                 $('.searchresult ol').html('')
 
                 if (result.length !== 0) {
                     result.forEach(function (i) {
-                        console.log('1')
+                        // console.log('1')
                         let $li = $(`
                             <li>
                                 <a href="./song.html?id=${i.id}">
@@ -174,7 +174,7 @@ $(function () {
                                 </a>
                             </li>
                         `)
-                        console.log('2')
+                        // console.log('2')
                         $li.appendTo($('.searchresult ol'))
                     })
 
